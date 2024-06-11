@@ -56,7 +56,7 @@ app.put('/canciones/:id', (req, res) => {
 app.delete('/canciones/:id', (req, res) => {
     const id = parseInt(req.params.id); 
     let canciones = readJsonFile();
-    canciones = canciones.filter((c) => c.id !== id);
+    canciones = canciones.filter((c) => c.id != id);
     writeJsonFile(canciones);
     res.send('Canción eliminada');
   });
